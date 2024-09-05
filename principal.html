@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA PARKING</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/free/png-256/free-gta-283003.png?f=webp">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="chevrolet-camaro-ss-gta-5.1920x1080.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Los_Santos_Customs_logo.webp" alt="Los Santos Customs" width="500px" height="250px">
+        </div>
+
+        <!-- Formulario de Registro de Vehículos -->
+        <form id="vehicle-form">
+            <label for="plate">Placa del vehículo:</label>
+            <input type="text" id="plate" required>
+            <hr>
+
+            <label for="vehicle-type">Tipo de vehículo:</label>
+            <select id="vehicle-type">
+                <option value="moto">Moto</option>
+                <option value="automovil">Automóvil</option>
+                <option value="camioneta">Camioneta</option>
+            </select>
+            <hr>
+
+            <label for="entry-time">Hora de entrada:</label>
+            <input type="datetime-local" id="entry-time" required>
+            <hr>
+
+            <label for="space">Número de espacio:</label>
+            <input type="number" id="space" min="1" max="20" required>
+            <hr>
+
+            <button type="submit">Agregar vehículo</button>
+            <button type="button" id="set-current-time">Establecer hora actual</button>
+        </form>
+
+        <!-- Tablas de Vehículos Actuales y Historial -->
+        <h2>Vehículos Actuales</h2>
+        <table id="vehicle-list">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Tipo de Vehículo</th>
+                    <th>Hora de Entrada</th>
+                    <th>Espacio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Historial de Vehículos</h2>
+        <table id="history-list">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Tipo de Vehículo</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Salida</th>
+                    <th>Total a Pagar</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <!-- Contenedor de Estados de Espacios -->
+    <h2 id="parking-status-title">Estado:</h2>
+<div id="parking-spaces" class="parking-spaces-container">
+    
+    <!-- Los botones se generarán dinámicamente aquí -->
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
